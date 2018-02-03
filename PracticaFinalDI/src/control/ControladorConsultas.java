@@ -62,11 +62,13 @@ public class ControladorConsultas implements ActionListener{
 	/**
 	 * Contructor de la clase
 	 * 
-	 * @param form
-	 * @param frmA
-	 * @param cons
-	 * @param pers
-	 * @param proy
+	 * Inicializa todos los listener para los formularios.
+	 * 
+	 * @param form Formulario principal
+	 * @param frmA Formulario secundario
+	 * @param cons ControlodorConsultas
+	 * @param pers Persona
+	 * @param proy Proyecto
 	 */
 	public ControladorConsultas(Formulario form, FrmAlta frmA, Consultas cons, Persona pers, Proyecto proy) {
 		
@@ -99,6 +101,10 @@ public class ControladorConsultas implements ActionListener{
 			mostrarListaProyectos();
 		}
 	}
+	
+	/**
+	 *  Metodo que inicia el formulario y la ayuda
+	 */
 	
 	public void iniciar() {
 		form.setVisible(true);
@@ -140,6 +146,9 @@ public class ControladorConsultas implements ActionListener{
 		}
 	}
 	
+	/**
+	 * Listener que controla que boton se pulsa y la accion que realizara
+	 */
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -399,12 +408,20 @@ public class ControladorConsultas implements ActionListener{
 		
 	}
 	
+	/**
+	 *  Inicia la tabla si existe una base de datos
+	 */
+	
 	private void iniciarTabla() {
 		if (cons.comprobarDB()) {
 			mostrarProyectos();
 			form.table.repaint();
 		}
 	}
+	
+	/**
+	 * Metodo que muestra los proyectos en la tabla
+	 */
 	
 	private void mostrarProyectos() {
 		if (cons.comprobarDB()) {
@@ -414,6 +431,10 @@ public class ControladorConsultas implements ActionListener{
 		}
 		
 	}
+	
+	/**
+	 * Metodo que muestra los empleados en la tabla
+	 */
 
 	private void mostrarEmpleados() {
 		if (cons.comprobarDB()) {
@@ -423,6 +444,10 @@ public class ControladorConsultas implements ActionListener{
 		}
 	}
 	
+	/**
+	 * Metodo que muestra las asignaciones en la tabla
+	 */
+	
 	private void mostrarAsignaciones() {
 		if (cons.comprobarDB()) {
 			form.table.setModel(cons.consultaAsignaciones());
@@ -430,6 +455,10 @@ public class ControladorConsultas implements ActionListener{
 			form.pnlTabla.add(scp,BorderLayout.CENTER);
 		}
 	}
+	
+	/**
+	 * Metodo que muestra los empleados en la lista
+	 */
 	
 	private void mostrarListaEmpleados() {
 		if (cons.comprobarDB()) {
@@ -439,6 +468,10 @@ public class ControladorConsultas implements ActionListener{
 		}
 	}
 	
+	/**
+	 * Metodo que muestra los proyectos en la lista
+	 */
+	
 	private void mostrarListaProyectos() {
 		if (cons.comprobarDB()) {
 			form.listaProyectos.setModel(cons.listaProyectos());
@@ -446,6 +479,12 @@ public class ControladorConsultas implements ActionListener{
 			this.form.pnlEmpleados.add(scpListaPro);
 		}
 	}
+	
+	/**
+	 * 
+	 * @param mes Recibe un mes en numero y los transforma a un String
+	 * @return String mes traducido
+	 */
 
 	private String mesLiteral(int mes) {
 		String mesL = "";
@@ -493,6 +532,9 @@ public class ControladorConsultas implements ActionListener{
 		return mesL;
 	}
 
+	/**
+	 * Metodo que abre el formulario de alta añade los listeners a sus botones
+	 */
 	private void abrirFormAlta() {
 		try {
 			
@@ -512,6 +554,10 @@ public class ControladorConsultas implements ActionListener{
 		}
 		
 	}
+	
+	/**
+	 * Metodo que limpia los campos de un formulario
+	 */
 
 	public void limpiar() {
 		frmA.tfApellidos.setText(null);
@@ -531,6 +577,12 @@ public class ControladorConsultas implements ActionListener{
 		
 	}
 	
+	/**
+	 * Metodo que traduce un String de un mes al int del correspondiente mes
+	 * 
+	 * @param object String de un mes
+	 * @return int del mes correspondiente al String
+	 */
 	public int traducirFecha(Object object) {
 		if (object == "Enero") return 1;
 		else if (object == "Febrero") return 2;
@@ -546,6 +598,13 @@ public class ControladorConsultas implements ActionListener{
 		else if (object == "Diciembre") return 12;
 		return -1;
 	}
+	
+	/**
+	 * Metodo que comprueba si un DNI es correcto
+	 * 
+	 * @param dni String dni
+	 * @return true si es correcto, false si no lo es
+	 */
 	
 	public boolean validaDNI(String dni) {
 		boolean valida = false;
@@ -563,6 +622,14 @@ public class ControladorConsultas implements ActionListener{
 		
 		return valida;
 	}
+	
+	/**
+	 * Metodo que comprueba que un campo de texto no esta vacio
+	 * 
+	 * @param tf JTextField que se desea comprobar
+	 * @param lbl JLabel en el que se mostrara el mensaje de error si lo hubiese
+	 * @return true si esta relleno y false si está vacio
+	 */
 	
 	public boolean vacio(JTextField tf, JLabel lbl) {
 		Border normal = frmA.spEmpAno.getBorder();
