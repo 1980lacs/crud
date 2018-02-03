@@ -1,23 +1,6 @@
 @CHARSET "ISO-8859-1";
-div.img{
-  display:table;
+
+h1{
+	text-align: left;
 }
-div.img img{
- margin:0;
- padding:0;
-}
-div.img span{
- line-height:normal;
- font-size:11px;
- display:table-row;
- margin:0;
- background:#646464;
- color:white;
- font-style:italic;
- padding:5px;
- text-align:center;
-}
-img.grande{
-  width: 200px; 
-  height: 200px;
-}
+

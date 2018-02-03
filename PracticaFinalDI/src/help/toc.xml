@@ -2,6 +2,12 @@
 <toc version="1.0">
    <tocitem text="Practica DI" target="aplicacion">
       <tocitem text="Principal" target="main"/>
-      <tocitem text="Inserción empleados" target="insercion_empleados"/>
+      <tocitem text="Inserción empleados y proyectos" target="insercion_empleados"/>
+      <tocitem text="Listado de empleados,proyectos y asignaciones" target="listado_empleados"/>
+      <tocitem text="Modificación de empleados y proyectos" target="modificacion"/>
+      <tocitem text="Asignación de empleados y proyectos" target="asignacion"/>
+      <tocitem text="Eliminación de empleados y proyectos" target="eliminacion"/>
+      <tocitem text="Busqueda de empleados y proyectos" target="busqueda"/>
+      <tocitem text="Creación de ejemplo" target="ejemplo"/>
    </tocitem>
 </toc>

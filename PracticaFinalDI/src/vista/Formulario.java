@@ -72,6 +72,7 @@ public class Formulario extends JFrame {
 	public JMenuItem mntmEmpleados;
 	public JMenuItem mntmProyectos;
 	public JMenuItem mntmAyuda;
+	public JMenu mnAyuda;
 
 	/**
 	 * Create the frame.
@@ -104,6 +105,9 @@ public class Formulario extends JFrame {
 		mnInformes = new JMenu("Informes");
 		menuBar.add(mnInformes);
 		
+		mnAyuda = new JMenu("Ayuda");
+		menuBar.add(mnAyuda);
+		
 		mntmEmpleados = new JMenuItem("Empleados");
 		mntmEmpleados.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.ALT_MASK));
 		
@@ -115,7 +119,8 @@ public class Formulario extends JFrame {
 		
 		mnInformes.add(mntmEmpleados);
 		mnInformes.add(mntmProyectos);
-		mnInformes.add(mntmAyuda);
+		
+		mnAyuda.add(mntmAyuda);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

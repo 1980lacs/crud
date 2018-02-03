@@ -6,4 +6,10 @@ PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN"
    <mapID target="aplicacion" url="html/main.html" />
    <mapID target="main" url="html/main.html" />
    <mapID target="insercion_empleados" url="html/insercion_empleados.html" />
+   <mapID target="listado_empleados" url="html/listado.html" />
+   <mapID target="modificacion" url="html/modificacion.html" />
+   <mapID target="asignacion" url="html/asignacion.html" />
+   <mapID target="eliminacion" url="html/borrado.html" />
+   <mapID target="busqueda" url="html/busqueda.html" />
+   <mapID target="ejemplo" url="html/ejemplo.html" />
 </map>

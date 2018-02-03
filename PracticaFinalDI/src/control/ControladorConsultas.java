@@ -2,6 +2,7 @@ package control;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -131,6 +132,8 @@ public class ControladorConsultas implements ActionListener{
 			
 			//Poner ayuda a los items y teclas
 			
+			Dimension d = new Dimension(800, 600);
+			hb.setSize(d);
 			hb.enableHelpOnButton(form.mntmAyuda, "main", helpset);
 		}catch(Exception ex) {
 			System.out.println(ex.getMessage());
