@@ -16,6 +16,9 @@ import javax.swing.JTable;
 import javax.swing.JTabbedPane;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.TableCellRenderer;
+
+import control.Ejecutable;
+
 import javax.swing.border.MatteBorder;
 import java.awt.Color;
 import java.awt.Component;
@@ -186,7 +189,8 @@ public class Formulario extends JFrame {
 		tfBuscar.setColumns(10);
 		
 		btnBuscar = new JButton("");
-		btnBuscar.setIcon(new ImageIcon(("src/Imagenes/buscar.png")));
+		//btnBuscar.setIcon(new ImageIcon(("src/Imagenes/buscar.png")));
+		btnBuscar.setIcon(new ImageIcon(this.getClass().getResource("img/buscar.png")));
 		btnBuscar.setBounds(217, 475, 74, 23);
 		pnlAux.add(btnBuscar);
 		
